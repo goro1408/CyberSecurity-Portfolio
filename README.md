@@ -8,6 +8,11 @@ Welcome to my cybersecurity portfolio. Here, you will find various projects show
 
 A simple Python tool to scan local networks and identify devices.
 
+### [ZIP Password Cracker](projects/zip-cracker)
+
+A tool to attempt to crack password-protected ZIP files using a brute-force attack.
+
+
 ## About Me
 
 Hi my name is Orlando im from Puerto Rico and im doing what im passionate about and pursuing my carrer in it.
