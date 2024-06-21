@@ -22,7 +22,7 @@ class TestNetworkScanner(unittest.TestCase):
         mock_response = MagicMock()
         mock_response.psrc = "192.168.1.1"
         mock_response.hwsrc = "00:11:22:33:44:55"
-        mock_srp.return_value = [([MagicMock()], [mock_response])]
+        mock_srp.return_value = [(MagicMock(), mock_response)]  # Adjusted to return a tuple
 
         devices = scan_network("192.168.1.1/32")
 
