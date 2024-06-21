@@ -1,9 +1,12 @@
 import unittest
-from scanner import scan_network
+from unittest.mock import patch
+from projects.network_scanner.scanner import scan_network
 
 class TestNetworkScanner(unittest.TestCase):
 
-    def test_scan_network(self):
+    @patch('projects.network_scanner.scanner.srp')
+    def test_scan_network(self, mock_srp):
+        mock_srp.return_value = [([], [])]  # Mock empty response
         devices = scan_network("192.168.1.1/32")
         self.assertIsInstance(devices, list)
         self.assertGreaterEqual(len(devices), 0)
