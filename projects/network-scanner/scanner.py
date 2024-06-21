@@ -13,7 +13,7 @@ def scan_network(ip_range):
 
     # Process the response and extract the IP and MAC addresses
     devices = []
-    for sent, received in result:
+    for sent, received in result:(python)
         devices.append({'ip': received.psrc, 'mac': received.hwsrc})
 
     return devices
