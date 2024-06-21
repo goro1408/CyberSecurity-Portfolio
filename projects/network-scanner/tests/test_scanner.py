@@ -14,18 +14,18 @@ class TestNetworkScanner(unittest.TestCase):
     @patch('scanner.ARP')
     @patch('scanner.Ether')
     def test_scan_network(self, mock_Ether, mock_ARP, mock_srp):
-        # Mock ARP and Ether
+        # Mock ARP and Ether to return mocked objects
         mock_ARP.return_value = MagicMock()
         mock_Ether.return_value = MagicMock()
-        
-        # Mock srp to return a controlled output
-        mock_srp.return_value = [(
-            MagicMock(), 
-            MagicMock(psrc="192.168.1.1", hwsrc="00:11:22:33:44:55")
-        )]
-        
+
+        # Create a mock response for srp
+        mock_response = MagicMock()
+        mock_response.psrc = "192.168.1.1"
+        mock_response.hwsrc = "00:11:22:33:44:55"
+        mock_srp.return_value = [([MagicMock()], [mock_response])]
+
         devices = scan_network("192.168.1.1/32")
-        
+
         self.assertIsInstance(devices, list)
         self.assertGreaterEqual(len(devices), 1)
         self.assertEqual(devices[0]['ip'], "192.168.1.1")
