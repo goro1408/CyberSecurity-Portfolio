@@ -16,6 +16,10 @@ A tool to attempt to crack password-protected ZIP files using a brute-force atta
 
 A simple tool to scan open ports on a given IP address or range.
 
+### [Password Strength Checker](projects/password-checker)
+
+A Python tool to analyze the strength of passwords and provide feedback on how to improve them.
+
 ## About Me
 
 Hi my name is Orlando im from Puerto Rico and im doing what im passionate about and pursuing my carrer in it.
