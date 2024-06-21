@@ -23,7 +23,4 @@ jobs:
 
     - name: Run Network Scanner Tests
       run: |
-        # Here you would run any tests or linters for your project.
-        # Assuming you have tests, you can run them like this:
-        # pytest projects/network-scanner/tests/
-        echo "No tests defined yet."
+        python -m unittest discover projects/network-scanner/tests/
