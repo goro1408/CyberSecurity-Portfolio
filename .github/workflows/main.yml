@@ -26,4 +26,4 @@ jobs:
 
     - name: Run Network Scanner Tests
       run: |
-        python -m unittest discover projects/network-scanner/tests/
+        python -m unittest discover -s projects/network-scanner/tests -p "*.py"
