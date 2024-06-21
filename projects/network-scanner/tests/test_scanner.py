@@ -28,7 +28,7 @@ class TestNetworkScanner(unittest.TestCase):
         devices = scan_network("192.168.1.1/32")
 
         self.assertIsInstance(devices, list)
-        self.assertGreaterEqual(len(devices), 1)
+        self.assertGreaterEqual(len(devices), 2)
         self.assertEqual(devices[0]['ip'], "192.168.1.1")
         self.assertEqual(devices[0]['mac'], "00:11:22:33:44:55")
 
