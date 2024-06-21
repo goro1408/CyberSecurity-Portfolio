@@ -12,6 +12,9 @@ A simple Python tool to scan local networks and identify devices.
 
 A tool to attempt to crack password-protected ZIP files using a brute-force attack.
 
+### [Port Scanner](projects/port-scanner)
+
+A simple tool to scan open ports on a given IP address or range.
 
 ## About Me
 
