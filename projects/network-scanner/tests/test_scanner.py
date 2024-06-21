@@ -1,12 +1,15 @@
 import unittest
-from unittest.mock import patch
-from projects.network_scanner.scanner import scan_network
+import sys
+import os
+
+# Add the path to the scanner module
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from scanner import scan_network
 
 class TestNetworkScanner(unittest.TestCase):
 
-    @patch('projects.network_scanner.scanner.srp')
-    def test_scan_network(self, mock_srp):
-        mock_srp.return_value = [([], [])]  # Mock empty response
+    def test_scan_network(self):
         devices = scan_network("192.168.1.1/32")
         self.assertIsInstance(devices, list)
         self.assertGreaterEqual(len(devices), 0)
