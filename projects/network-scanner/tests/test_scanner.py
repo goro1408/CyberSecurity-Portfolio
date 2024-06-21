@@ -19,10 +19,11 @@ class TestNetworkScanner(unittest.TestCase):
         mock_Ether.return_value = MagicMock()
 
         # Create a mock response for srp
-        mock_response = MagicMock()
-        mock_response.psrc = "192.168.1.1"
-        mock_response.hwsrc = "00:11:22:33:44:55"
-        mock_srp.return_value = [(MagicMock(), mock_response)]  # Adjusted to return a tuple
+        mock_sent = MagicMock()
+        mock_received = MagicMock()
+        mock_received.psrc = "192.168.1.1"
+        mock_received.hwsrc = "00:11:22:33:44:55"
+        mock_srp.return_value = [(mock_sent, mock_received)]  # Ensure this returns a tuple of two elements
 
         devices = scan_network("192.168.1.1/32")
 
